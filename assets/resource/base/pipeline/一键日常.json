@@ -1,0 +1,42 @@
+{
+    "一键日常": {
+        "next": [
+            "邮件领取",
+            "物资采集"
+        ]
+    },
+    "邮件领取": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            857,
+            0,
+            423,
+            287
+        ],
+        "template": "邮件领取.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "领取全部邮件",
+            "返回主页"
+        ]
+    },
+    "领取全部邮件": {
+        "next": [
+            "返回主页"
+        ]
+    },
+    "返回主页": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            666,
+            286
+        ],
+        "template": "返回主页.png",
+        "threshold": 0.8,
+        "action": "Click"
+    }
+}
