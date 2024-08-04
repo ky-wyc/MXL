@@ -2,8 +2,137 @@
     "一键日常": {
         "next": [
             "邮件领取",
-            "物资采集"
+            "选择-深渊探索",
+            "任务"
         ]
+    },
+    "任务": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            500,
+            588,
+            220
+        ],
+        "template": "一键日常\\任务.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击提交",
+            "领取活跃奖励",
+            "获得奖励",
+            "莫妮卡的支援"
+        ]
+    },
+    "莫妮卡的支援": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            501,
+            878,
+            219
+        ],
+        "template": "一键日常\\莫妮卡的支援.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "获得奖励",
+            "60体力",
+            "晋级奖励"
+        ]
+    },
+    "晋级奖励": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            501,
+            878,
+            219
+        ],
+        "template": "一键日常\\晋级奖励.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "获得奖励",
+            "领取晋级奖励",
+            "公会委托"
+        ]
+    },
+    "领取晋级奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\晋级奖励领取.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "公会委托": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            501,
+            878,
+            219
+        ],
+        "template": "一键日常\\公会委托.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "获得奖励",
+            "领取公会委托奖励",
+            "领取公会委托奖励",
+            "返回主页"
+        ]
+    },
+    "领取公会委托奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\委托奖励领取.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "委托奖励领取"
+        ]
+    },
+    "领取公会委托奖励2": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\公会委托奖励.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "委托奖励领取": {
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\委托奖励领取2.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "60体力": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\0体力.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "点击提交": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\提交.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "获得奖励"
+        ]
+    },
+    "领取活跃奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\领取活跃奖励.png",
+        "threshold": 0.8,
+        "action": "Click"
     },
     "邮件领取": {
         "is_sub": true,
@@ -14,17 +143,57 @@
             423,
             287
         ],
-        "template": "邮件领取.png",
+        "template": "一键日常\\邮件领取.png",
         "threshold": 0.8,
         "action": "Click",
         "next": [
             "领取全部邮件",
-            "返回主页"
+            "玩法选择"
         ]
     },
     "领取全部邮件": {
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\领取全部邮件.png",
+        "threshold": 0.8,
+        "action": "Click",
         "next": [
-            "返回主页"
+            "获得奖励",
+            "玩法选择"
+        ]
+    },
+    "获得奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "物资采集\\获得物资.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "target": [
+            126,
+            219,
+            40,
+            63
+        ]
+    },
+    "玩法选择": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            666,
+            286
+        ],
+        "template": "一键日常\\玩法选择.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "选择-深渊探索": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\选择-深渊探索.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "物资采集"
         ]
     },
     "返回主页": {
@@ -35,7 +204,7 @@
             666,
             286
         ],
-        "template": "返回主页.png",
+        "template": "一键日常\\返回主页.png",
         "threshold": 0.8,
         "action": "Click"
     }
