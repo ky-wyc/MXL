@@ -1,0 +1,186 @@
+{
+    "消耗金币": {
+        "next": [
+            "进入徽章",
+            "玩法-选择",
+            "全部徽章",
+            "选择徽章",
+            "选择徽章-上滑",
+            "返回主页"
+        ]
+    },
+    "进入徽章": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "全部徽章": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\推荐徽章.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "target": [
+            209,
+            281,
+            0,
+            0
+        ],
+        "post_wait_freezes": 500
+    },
+    "选择徽章": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\选中四星徽章.png",
+            "徽章\\选中三星徽章.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "升级"
+        ]
+    },
+    "选择徽章-上滑": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            740,
+            0,
+            540,
+            267
+        ],
+        "template": [
+            "徽章\\筛选.png"
+        ],
+        "threshold": 0.8,
+        "action": "Swipe",
+        "begin": [
+            1024,
+            541,
+            10,
+            10
+        ],
+        "end": [
+            1024,
+            300,
+            10,
+            10
+        ],
+        "post_wait_freezes": 1000
+    },
+    "升级": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            486,
+            1280,
+            234
+        ],
+        "template": [
+            "徽章\\升级.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "添加材料-上品"
+        ]
+    },
+    "添加材料-上品": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\上品.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "上品满足判断",
+            "材料不足",
+            "添加材料-上品"
+        ]
+    },
+    "上品满足判断": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\上品34.png"
+        ],
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "点击升级"
+        ]
+    },
+    "添加材料-精良": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\精良.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "精良满足判断",
+            "添加材料-精良"
+        ]
+    },
+    "精良满足判断": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\精良67.png"
+        ],
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "点击升级"
+        ]
+    },
+    "点击升级": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\升级.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "等级提升",
+            "点击"
+        ]
+    },
+    "等级提升": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\等级提升.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "材料不足": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\不足.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "点击清空"
+        ]
+    },
+    "点击清空": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "徽章\\清空.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "添加材料-精良"
+        ]
+    }
+}

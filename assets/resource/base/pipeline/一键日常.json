@@ -2,22 +2,81 @@
     "一键日常": {
         "next": [
             "邮件领取",
-            "选择-深渊探索",
-            "任务"
+            "打开任务",
+            "每日任务-深渊探索",
+            "每日任务-物资补给",
+            "每日任务-成员升级",
+            "每日任务-消耗金币",
+            "任务奖励全领取"
         ]
     },
-    "任务": {
+    "打开任务": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            500,
-            588,
-            220
+        "template": [
+            "一键日常\\日常.png",
+            "一键日常\\任务.png"
         ],
-        "template": "一键日常\\任务.png",
+        "threshold": 0.8,
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "点击提交",
+            "领取活跃奖励",
+            "获得奖励",
+            "返回"
+        ]
+    },
+    "每日任务-深渊探索": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\每日-深渊探索.png",
+        "threshold": 0.9,
+        "next": [
+            "物资采集"
+        ]
+    },
+    "每日任务-消耗金币": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\每日-消耗金币.png",
+        "threshold": 0.99,
+        "next": [
+            "消耗金币"
+        ]
+    },
+    "每日任务-成员升级": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\每日-成员升级.png",
+        "threshold": 0.99,
+        "next": [
+            "成员升级"
+        ]
+    },
+    "每日任务-物资补给": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "一键日常\\每日-物资补给.png",
+        "threshold": 0.99,
+        "next": [
+            "物资补给"
+        ]
+    },
+    "任务奖励全领取": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "一键日常\\任务.png",
+            "一键日常\\日常.png",
+            "一键日常\\任务2.png",
+            "小任务.png"
+        ],
         "threshold": 0.8,
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "点击提交",
             "领取活跃奖励",
@@ -36,7 +95,7 @@
         "template": "一键日常\\莫妮卡的支援.png",
         "threshold": 0.8,
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "获得奖励",
             "60体力",
@@ -54,7 +113,7 @@
         "template": "一键日常\\晋级奖励.png",
         "threshold": 0.8,
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "获得奖励",
             "领取晋级奖励",
@@ -79,19 +138,21 @@
         "template": "一键日常\\公会委托.png",
         "threshold": 0.8,
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "获得奖励",
             "领取公会委托奖励",
-            "领取公会委托奖励",
+            "领取公会委托奖励2",
             "返回主页"
         ]
     },
     "领取公会委托奖励": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "一键日常\\委托奖励领取.png",
-        "threshold": 0.8,
+        "template": [
+            "一键日常\\委托奖励领取.png",
+            "一键日常\\委托领取2.png"
+        ],
         "action": "Click",
         "next": [
             "委托奖励领取"
@@ -113,8 +174,8 @@
     "60体力": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "一键日常\\0体力.png",
-        "threshold": 0.8,
+        "template": "一键日常\\60体力.png",
+        "threshold": 0.95,
         "action": "Click"
     },
     "点击提交": {
@@ -122,10 +183,7 @@
         "recognition": "TemplateMatch",
         "template": "一键日常\\提交.png",
         "threshold": 0.8,
-        "action": "Click",
-        "next": [
-            "获得奖励"
-        ]
+        "action": "Click"
     },
     "领取活跃奖励": {
         "is_sub": true,
@@ -135,7 +193,6 @@
         "action": "Click"
     },
     "邮件领取": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             857,
@@ -144,11 +201,12 @@
             287
         ],
         "template": "一键日常\\邮件领取.png",
-        "threshold": 0.8,
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "领取全部邮件",
-            "玩法选择"
+            "返回主页"
         ]
     },
     "领取全部邮件": {
@@ -156,15 +214,16 @@
         "template": "一键日常\\领取全部邮件.png",
         "threshold": 0.8,
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "获得奖励",
-            "玩法选择"
+            "返回主页"
         ]
     },
     "获得奖励": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "物资采集\\获得物资.png",
+        "template": "深渊探索\\获得物资.png",
         "threshold": 0.8,
         "action": "Click",
         "target": [
@@ -186,16 +245,6 @@
         "threshold": 0.8,
         "action": "Click"
     },
-    "选择-深渊探索": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": "一键日常\\选择-深渊探索.png",
-        "threshold": 0.8,
-        "action": "Click",
-        "next": [
-            "物资采集"
-        ]
-    },
     "返回主页": {
         "recognition": "TemplateMatch",
         "roi": [
@@ -207,5 +256,13 @@
         "template": "一键日常\\返回主页.png",
         "threshold": 0.8,
         "action": "Click"
+    },
+    "返回": {
+        "recognition": "TemplateMatch",
+        "template": "玩法-选择.png",
+        "threshold": 0.8,
+        "next": [
+            "点击"
+        ]
     }
 }

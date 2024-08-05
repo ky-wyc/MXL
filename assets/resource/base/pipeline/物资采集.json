@@ -2,6 +2,7 @@
     "物资采集": {
         "next": [
             "进入深渊",
+            "玩法-选择",
             "选择指南",
             "物资采集区",
             "前往",
@@ -9,8 +10,12 @@
         ]
     },
     "进入深渊": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "物资采集\\深渊探索.png",
+        "template": [
+            "深渊探索\\深渊探索.png",
+            "一键日常\\选择-深渊探索.png"
+        ],
         "threshold": 0.8,
         "action": "Click",
         "post_wait_freezes": {
@@ -19,6 +24,7 @@
         }
     },
     "选择指南": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             735,
@@ -26,21 +32,21 @@
             545,
             210
         ],
-        "template": "物资采集\\指南.png",
+        "template": "深渊探索\\指南.png",
         "threshold": 0.8,
-        "action": "Click",
-        "is_sub": true
+        "post_wait_freezes": 500,
+        "action": "Click"
     },
     "物资采集区": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "物资采集\\物资采集区.png",
+        "template": "深渊探索\\物资采集区.png",
         "threshold": 0.8,
         "action": "Click"
     },
     "迷雾之森": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\迷雾之森.png",
+        "template": "深渊探索\\迷雾之森.png",
         "roi": [
             322,
             144,
@@ -56,7 +62,7 @@
     },
     "炎流谷地": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\炎流谷地.png",
+        "template": "深渊探索\\炎流谷地.png",
         "roi": [
             322,
             144,
@@ -71,8 +77,9 @@
         ]
     },
     "前往": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "物资采集\\前往.png",
+        "template": "深渊探索\\前往.png",
         "roi": [
             322,
             144,
@@ -82,7 +89,7 @@
         "threshold": 0.8,
         "action": "Click",
         "post_wait_freezes": {
-            "time": 1000,
+            "time": 500,
             "threshold": 0.8
         },
         "next": [
@@ -92,36 +99,47 @@
     },
     "清剿魔物": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\清剿魔物.png",
+        "template": "深渊探索\\清剿魔物.png",
         "threshold": 0.8,
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "快速挑战"
         ]
     },
     "物资搜索": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\物资搜索.png",
+        "template": "深渊探索\\物资搜索.png",
         "threshold": 0.8,
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.6
+        },
         "next": [
-            "获得物资"
+            "获得物资",
+            "边缘点击"
         ]
     },
     "快速挑战": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\快速战斗.png",
+        "template": "深渊探索\\快速战斗.png",
         "threshold": 0.8,
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "战斗胜利"
         ]
     },
     "战斗胜利": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\战斗胜利.png",
+        "template": "深渊探索\\战斗胜利.png",
         "threshold": 0.8,
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.6
+        },
         "next": [
             "获得物资",
             "边缘点击"
@@ -130,7 +148,7 @@
     "获得物资": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "物资采集\\获得物资.png",
+        "template": "深渊探索\\获得物资.png",
         "threshold": 0.8,
         "next": [
             "边缘点击"
@@ -138,13 +156,17 @@
     },
     "关闭": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\关闭.png",
+        "template": "深渊探索\\关闭.png",
         "action": "Click",
-        "threshold": 0.8
+        "threshold": 0.8,
+        "post_wait_freezes": 500,
+        "next": [
+            "返回营地"
+        ]
     },
     "返回营地": {
         "recognition": "TemplateMatch",
-        "template": "物资采集\\返回营地.png",
+        "template": "深渊探索\\返回营地.png",
         "action": "Click",
         "threshold": 0.8
     },
@@ -155,9 +177,15 @@
             219,
             40,
             63
-        ],
+        ]
+    },
+    "玩法-选择": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "玩法-选择.png",
+        "threshold": 0.8,
         "next": [
-            "物资采集"
+            "玩法选择"
         ]
     }
 }

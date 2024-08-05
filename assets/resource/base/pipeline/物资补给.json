@@ -1,0 +1,208 @@
+{
+    "物资补给": {
+        "next": [
+            "选择-冒险",
+            "玩法-选择",
+            "打开任务",
+            "选择物资补给",
+            "战术演练1",
+            "货币试炼1",
+            "派遣",
+            "返回主页"
+        ]
+    },
+    "开始行动": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\开始行动.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "派遣": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\派遣.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "1次派遣",
+            "5次派遣"
+        ]
+    },
+    "1次派遣": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\派遣1次.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "派遣结束后点击"
+        ]
+    },
+    "5次派遣": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\派遣5次.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "派遣结束后点击"
+        ]
+    },
+    "战术演练1": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "战术演练2"
+        ]
+    },
+    "战术演练2": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练2.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        },
+        "next": [
+            "战术演练-4",
+            "战术演练-3",
+            "战术演练-2",
+            "战术演练-1"
+        ]
+    },
+    "战术演练-1": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练-1.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "战术演练-2": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练-2.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "战术演练-3": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练-3.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "战术演练-4": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\战术演练-4.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "货币试炼1": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "货币试炼2"
+        ]
+    },
+    "货币试炼2": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼2.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "货币试炼-5",
+            "货币试炼-4",
+            "货币试炼-3",
+            "货币试炼-2",
+            "货币试炼-1"
+        ]
+    },
+    "货币试炼-1": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼-1.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "货币试炼-2": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼-2.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "货币试炼-3": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼-3.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "货币试炼-4": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼-4.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "货币试炼-5": {
+        "recognition": "TemplateMatch",
+        "template": "冒险\\货币试炼-5.png",
+        "threshold": 0.8,
+        "action": "Click"
+    },
+    "选择物资补给": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\物资补给.png",
+        "threshold": 0.8,
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "点击"
+        ]
+    },
+    "派遣结束后点击": {
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "target": [
+            26,
+            186,
+            42,
+            59
+        ],
+        "next": [
+            "点击"
+        ]
+    },
+    "点击": {
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "target": [
+            26,
+            186,
+            42,
+            59
+        ]
+    },
+    "选择-冒险": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\冒险.png",
+        "threshold": 0.8,
+        "post_wait_freezes": 500,
+        "action": "Click"
+    },
+    "打开玩法-冒险": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "冒险\\玩法-物资补给.png",
+        "threshold": 0.9,
+        "next": [
+            "玩法选择"
+        ]
+    }
+}

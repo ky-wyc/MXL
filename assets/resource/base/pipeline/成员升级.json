@@ -1,0 +1,126 @@
+{
+    "成员升级": {
+        "next": [
+            "进入成员页面",
+            "玩法-选择",
+            "选择成员",
+            "选择成员-左滑",
+            "返回主页"
+        ]
+    },
+    "进入成员页面": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "成员.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "筛选"
+        ]
+    },
+    "筛选": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            740,
+            0,
+            540,
+            267
+        ],
+        "template": [
+            "一键日常\\筛选.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "稀有度"
+        ]
+    },
+    "稀有度": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            813,
+            455,
+            467,
+            265
+        ],
+        "template": [
+            "一键日常\\稀有度.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击"
+        ]
+    },
+    "选择成员": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "一键日常\\lv3.png",
+            "一键日常\\lv2.png",
+            "一键日常\\大lv1.png",
+            "一键日常\\lv1.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "提升"
+        ]
+    },
+    "选择成员-左滑": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            740,
+            0,
+            540,
+            267
+        ],
+        "template": [
+            "一键日常\\筛选.png"
+        ],
+        "threshold": 0.8,
+        "action": "Swipe",
+        "begin": [
+            890,
+            265,
+            10,
+            10
+        ],
+        "end": [
+            390,
+            265,
+            10,
+            10
+        ],
+        "post_wait_freezes": 1000
+    },
+    "提升": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "一键日常\\提升.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.6
+        },
+        "next": [
+            "点击提升"
+        ]
+    },
+    "点击提升": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "一键日常\\点击提升.png"
+        ],
+        "threshold": 0.8,
+        "action": "Click"
+    }
+}
